@@ -1,0 +1,15 @@
+type Program {
+	id: ID!
+	name: String!
+	num1: Int!
+	num2: Int!
+	operation: [Operation] @hasInverse(field: program)
+}
+
+type Operation {
+	id: ID!
+	add: Int
+	sub: Int
+	mult: Int
+	program: Program!
+}
